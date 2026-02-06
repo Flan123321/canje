@@ -10,19 +10,37 @@
   --font-sans: "Inter Tight", sans-serif;
 }
 
-@utility btn-gold {
-  @apply px-8 py-4 bg-gold text-rich-black font-semibold text-sm uppercase tracking-wider transition-all duration-300 hover:bg-[#D4B478] hover:-translate-y-1;
+/* Base Button Style - Architectural & Strict */
+@utility btn-base {
+  @apply relative inline-flex items-center justify-center px-10 py-5 overflow-hidden font-sans text-[11px] font-bold uppercase tracking-[0.2em] transition-all duration-500 ease-out cursor-pointer;
+  border-radius: 0px;
+  /* Sharp corners = Luxury */
+}
 
+@utility btn-gold {
+  @apply btn-base bg-gold text-rich-black border border-gold;
+
+  /* Sophisticated Hover: Lift & Glow */
   &:hover {
-    box-shadow: 0 10px 40px -10px rgba(197, 160, 89, 0.3);
+    background-color: #D4B478;
+    transform: translateY(-2px);
+    box-shadow: 0 15px 30px -5px rgba(197, 160, 89, 0.3);
+  }
+
+  /* Active state for physical feel */
+  &:active {
+    transform: translateY(0);
   }
 }
 
 @utility btn-outline {
-  @apply px-8 py-4 bg-transparent border border-white/10 text-off-white font-medium text-sm uppercase tracking-wider transition-all duration-300 hover:text-gold;
+  @apply btn-base bg-transparent text-off-white border border-white/20;
 
+  /* Minimalist Hover: Gold Border & Text */
   &:hover {
     border-color: var(--color-gold);
+    color: var(--color-gold);
+    background-color: rgba(197, 160, 89, 0.03);
   }
 }
 
