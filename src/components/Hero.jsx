@@ -5,26 +5,32 @@ import { Reveal } from './Reveal';
 const Hero = ({ onOpenModal }) => {
     return (
         <section className="relative min-h-screen flex items-center pt-20 overflow-hidden">
-            {/* Background Elements */}
-            <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-[#1a1a1a] via-[#050505] to-[#050505] z-0"></div>
-            <div className="absolute top-0 right-0 w-[50vw] h-[50vw] bg-gold/5 rounded-full blur-[120px] pointer-events-none translate-x-1/2 -translate-y-1/2"></div>
+            {/* Background Image - Ocean Waves */}
+            <div
+                className="absolute inset-0 z-0 bg-cover bg-center bg-no-repeat"
+                style={{
+                    backgroundImage: 'url(/hero-ocean.jpg)',
+                    filter: 'brightness(0.3) blur(2px) saturate(0)'
+                }}
+            ></div>
 
-            {/* Grid Pattern */}
-            <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.02)_1px,transparent_1px)] bg-[size:100px_100px] [mask-image:radial-gradient(ellipse_at_center,black_40%,transparent_70%)] z-0"></div>
+            {/* Overlay for Dark Luxury Feel */}
+            <div className="absolute inset-0 bg-rich-black/80 z-0 mix-blend-multiply"></div>
+            <div className="absolute inset-0 bg-gradient-to-t from-rich-black via-transparent to-transparent z-0"></div>
+
+            {/* Grid Pattern Overlay */}
+            <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.02)_1px,transparent_1px)] bg-[size:100px_100px] [mask-image:radial-gradient(ellipse_at_center,black_40%,transparent_70%)] z-0 opacity-50"></div>
 
             <div className="container relative z-10 px-6 mx-auto">
                 <div className="max-w-4xl mx-auto text-center">
-                    <Reveal>
-                        <div className="inline-flex items-center gap-3 px-4 py-2 bg-white/5 border border-white/10 rounded-full mb-8 backdrop-blur-sm">
-                            <span className="w-2 h-2 bg-green-500 rounded-full animate-pulse shadow-[0_0_10px_rgba(34,197,94,0.5)]"></span>
-                            <span className="text-[10px] uppercase tracking-[0.2em] text-white/70">Red Privada Operativa • Q1 2026</span>
-                        </div>
-                    </Reveal>
+
+                    {/* Badge Removed per user request */}
 
                     <Reveal delay={0.2}>
                         <h1 className="text-5xl md:text-7xl lg:text-8xl leading-[0.9] text-white mb-8">
-                            El Mercado Inmobiliario es una <span className="text-white/40 font-serif italic">Selva Opaca.</span><br />
-                            Archer es tu Mapa.
+                            El mercado inmobiliario es <br />
+                            <span className="text-white/40 font-serif italic">un mar traicionero.</span><br />
+                            Archer es el único <span className="text-gold">timón firme.</span>
                         </h1>
                     </Reveal>
 
