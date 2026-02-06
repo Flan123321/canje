@@ -1,6 +1,7 @@
 import React from 'react';
 import { ArrowLeft } from 'lucide-react';
 import { Reveal } from './Reveal';
+import { Link } from 'react-router-dom';
 
 const Hero = ({ onOpenModal }) => {
     return (
@@ -24,8 +25,6 @@ const Hero = ({ onOpenModal }) => {
             <div className="container relative z-10 px-6 mx-auto">
                 <div className="max-w-4xl mx-auto text-center">
 
-                    {/* Badge Removed per user request */}
-
                     <Reveal delay={0.2}>
                         <h1 className="text-5xl md:text-7xl lg:text-8xl leading-[0.9] text-white mb-8">
                             El mercado inmobiliario es <br />
@@ -43,13 +42,13 @@ const Hero = ({ onOpenModal }) => {
 
                     <Reveal delay={0.6}>
                         <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
-                            <button onClick={onOpenModal} className="btn-gold min-w-[240px]">
+                            <button onClick={onOpenModal} className="btn-gold min-w-[240px] text-center">
                                 Solicitar Acreditación
                             </button>
-                            <button className="btn-outline min-w-[240px] group">
-                                Leer el Manifiesto
+                            <Link to="/manifiesto" className="btn-outline min-w-[240px] group text-center flex items-center justify-center">
+                                Leer el Decreto
                                 <span className="inline-block ml-2 transition-transform duration-300 group-hover:translate-x-1">→</span>
-                            </button>
+                            </Link>
                         </div>
                     </Reveal>
                 </div>
