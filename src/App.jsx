@@ -4,6 +4,7 @@ import Hero from './components/Hero';
 import SocialProof from './components/SocialProof';
 import Manifesto from './components/Manifesto';
 import Pillars from './components/Pillars';
+import ArcherFlipping from './components/ArcherFlipping';
 import Footer from './components/Footer';
 import AcreditationModal from './components/AcreditationModal';
 
@@ -19,6 +20,7 @@ function App() {
         <SocialProof />
         <Manifesto />
         <Pillars />
+        <ArcherFlipping onOpenModal={() => setIsModalOpen(true)} />
       </main>
 
       <Footer />
