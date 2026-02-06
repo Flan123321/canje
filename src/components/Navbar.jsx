@@ -17,19 +17,12 @@ const Navbar = ({ onOpenModal }) => {
         >
             <div className="container mx-auto px-6 flex justify-between items-center">
                 {/* Logo Structure Match */}
-                <a href="#" className="flex flex-col items-start leading-none group">
-                    <div className="flex items-center gap-1">
-                        {/* Custom A Icon - Simplified representation of the endless arrow */}
-                        <svg className="w-8 h-8 text-white mb-1 group-hover:text-gold transition-colors" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                            <path d="M12 2L2 22h20L12 2zm0 0v12" strokeLinecap="round" strokeLinejoin="round" />
-                            <path d="M8 12h8" strokeLinecap="round" />
-                            <path d="M12 16l-3 3 6-6" strokeLinecap="round" strokeLinejoin="round" />
-                        </svg>
-                        <span className="font-sans font-bold text-3xl tracking-tighter text-white group-hover:text-gold transition-colors">ARCHER</span>
-                    </div>
-                    <span className="text-[0.6rem] uppercase tracking-[0.3em] text-white/50 ml-10 group-hover:text-white/80 transition-colors">
-                        Real Estate
-                    </span>
+                <a href="#" className="flex items-center gap-3 group">
+                    <img
+                        src="/logo.png"
+                        alt="Archer Real Estate"
+                        className="h-12 w-auto object-contain transition-transform duration-300 group-hover:scale-105"
+                    />
                 </a>
 
                 {/* Desktop Menu */}
