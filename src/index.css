@@ -11,15 +11,27 @@
 }
 
 @utility btn-gold {
-  @apply px-8 py-4 bg-gold text-rich-black font-semibold text-sm uppercase tracking-wider transition-all duration-300 hover:bg-[#D4B478] hover:-translate-y-1 hover:shadow-[0_10px_40px_-10px_rgba(197, 160, 89, 0.3)];
+  @apply px-8 py-4 bg-gold text-rich-black font-semibold text-sm uppercase tracking-wider transition-all duration-300 hover:bg-[#D4B478] hover:-translate-y-1;
+
+  &:hover {
+    box-shadow: 0 10px 40px -10px rgba(197, 160, 89, 0.3);
+  }
 }
 
 @utility btn-outline {
-  @apply px-8 py-4 bg-transparent border border-white/10 text-off-white font-medium text-sm uppercase tracking-wider transition-all duration-300 hover:border-gold hover:text-gold;
+  @apply px-8 py-4 bg-transparent border border-white/10 text-off-white font-medium text-sm uppercase tracking-wider transition-all duration-300 hover:text-gold;
+
+  &:hover {
+    border-color: var(--color-gold);
+  }
 }
 
 @utility glass-card {
-  @apply bg-card-black border border-white/5 backdrop-blur-md p-8 sm:p-12 hover:border-gold/30 transition-colors duration-500;
+  @apply bg-card-black border border-white/5 backdrop-blur-md p-8 sm:p-12 transition-colors duration-500;
+
+  &:hover {
+    border-color: rgba(197, 160, 89, 0.3);
+  }
 }
 
 @utility text-gradient {
