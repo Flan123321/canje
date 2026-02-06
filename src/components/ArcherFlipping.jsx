@@ -1,5 +1,5 @@
 import React from 'react';
-import { Lock, Zap, EyeOff } from 'lucide-react';
+import { Lock, Zap, EyeOff, Fingerprint } from 'lucide-react';
 import { Reveal } from './Reveal';
 
 const ArcherFlipping = ({ onOpenModal }) => {
@@ -30,13 +30,15 @@ const ArcherFlipping = ({ onOpenModal }) => {
 
                     {/* CARD 1: EXPLAINER */}
                     <Reveal delay={0.3}>
-                        <div className="bg-card-black/50 border border-white/10 p-8 h-full rounded-sm hover:border-gold/30 transition-all duration-500 group">
-                            <Zap className="w-10 h-10 text-gold mb-6" />
-                            <h4 className="text-xl text-white font-serif mb-3">Velocidad de Ejecución</h4>
-                            <p className="text-sm text-white/50 leading-relaxed">
-                                El tiempo es el enemigo de la TIR. Nuestros equipos de obra entran el día 1.
-                                Sin burocracia. Objetivo: Liquidez en menos de 180 días.
-                            </p>
+                        <div className="bg-card-black/50 border border-white/10 p-8 h-full rounded-sm hover:border-gold/30 transition-all duration-500 group flex flex-col justify-between">
+                            <div>
+                                <Zap className="w-10 h-10 text-gold mb-6" />
+                                <h4 className="text-xl text-white font-serif mb-3">Velocidad de Ejecución</h4>
+                                <p className="text-sm text-white/50 leading-relaxed">
+                                    El tiempo es el enemigo de la TIR. Nuestros equipos de obra entran el día 1.
+                                    Sin burocracia. Objetivo: Liquidez en menos de 180 días.
+                                </p>
+                            </div>
                         </div>
                     </Reveal>
 
@@ -51,7 +53,7 @@ const ArcherFlipping = ({ onOpenModal }) => {
                                 <h4 className="text-2xl text-white font-serif mb-2">Proyecto: CLASSIFIED</h4>
                                 <p className="text-gold font-mono text-sm tracking-widest mb-6">SOLO ACCESO ACREDITADO</p>
 
-                                <div className="grid grid-cols-2 gap-4 w-full max-w-[200px] border-t border-white/10 pt-4">
+                                <div className="grid grid-cols-2 gap-4 w-full max-w-[200px] border-t border-white/10 pt-4 mb-6">
                                     <div>
                                         <p className="text-xs text-white/50 uppercase">ROI Est.</p>
                                         <p className="text-white font-bold text-lg blur-[4px] select-none">24%</p>
@@ -61,19 +63,33 @@ const ArcherFlipping = ({ onOpenModal }) => {
                                         <p className="text-white font-bold text-lg blur-[2px] select-none">6M</p>
                                     </div>
                                 </div>
+
+                                {/* Forensic Watermark Badge */}
+                                <div className="flex items-center gap-2 px-3 py-1.5 bg-red-900/20 border border-red-900/30 rounded text-[0.6rem] text-red-400 font-mono tracking-tight">
+                                    <Fingerprint size={10} />
+                                    <span>FORENSIC WATERMARK PROTECTED</span>
+                                </div>
                             </div>
                         </div>
                     </Reveal>
 
                     {/* CARD 3: METHODOLOGY */}
                     <Reveal delay={0.5}>
-                        <div className="bg-card-black/50 border border-white/10 p-8 h-full rounded-sm hover:border-gold/30 transition-all duration-500">
-                            <EyeOff className="w-10 h-10 text-gold mb-6" />
-                            <h4 className="text-xl text-white font-serif mb-3">Privacidad Absoluta</h4>
-                            <p className="text-sm text-white/50 leading-relaxed">
-                                Nuestras oportunidades <i>Off-Market</i> no tocan los portales públicos
-                                hasta que están renovadas y listas para la venta final.
-                            </p>
+                        <div className="bg-card-black/50 border border-white/10 p-8 h-full rounded-sm hover:border-gold/30 transition-all duration-500 flex flex-col justify-between">
+                            <div>
+                                <EyeOff className="w-10 h-10 text-gold mb-6" />
+                                <h4 className="text-xl text-white font-serif mb-3">Privacidad Absoluta</h4>
+                                <p className="text-sm text-white/50 leading-relaxed mb-4">
+                                    Nuestras oportunidades <i>Off-Market</i> no tocan los portales públicos.
+                                </p>
+                            </div>
+
+                            <div className="border-t border-white/5 pt-4 mt-auto">
+                                <p className="text-[0.7rem] text-white/30 leading-snug">
+                                    * Toda documentación incluye <span className="text-gold/60">Trazabilidad Esteganográfica</span>.
+                                    Cualquier filtración será perseguida legalmente por Violación de Secreto Comercial.
+                                </p>
+                            </div>
                         </div>
                     </Reveal>
                 </div>
