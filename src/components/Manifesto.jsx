@@ -19,8 +19,8 @@ const Manifesto = () => {
                                 <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-80"></div>
 
                                 <div className="absolute bottom-8 left-8 border-l-2 border-gold pl-6">
-                                    <p className="font-serif text-2xl text-white italic">"No vendemos casas. Vendemos certeza."</p>
-                                    <p className="text-gold text-xs uppercase tracking-widest mt-2">Flavio, Fundador</p>
+                                    <p className="font-serif text-2xl text-white italic">"No vendemos promesas. Garantizamos certeza jurídica."</p>
+                                    <p className="text-gold text-xs uppercase tracking-widest mt-2">Fundadores de Archer</p>
                                 </div>
                             </div>
                         </div>
@@ -31,21 +31,21 @@ const Manifesto = () => {
                         <Reveal delay={0.2}>
                             <h2 className="text-4xl md:text-5xl mb-12 leading-tight">
                                 <span className="block text-gold text-sm font-sans uppercase tracking-[0.3em] mb-4">La Disrupción</span>
-                                No somos una inmobiliaria. <br />
-                                <span className="opacity-50">Somos el fin de la burocracia.</span>
+                                Blindaje Legal Gratuito. <br />
+                                <span className="opacity-50">Acceso Exclusivo.</span>
                             </h2>
                         </Reveal>
 
                         <Reveal delay={0.3}>
                             <div className="space-y-8 text-lg text-white/60 font-light">
                                 <p>
-                                    Durante décadas, el mercado ha funcionado con reglas obsoletas y estafas ocultas. Las "Inmobiliarias Boutique" son solo oficinas bonitas con los mismos vicios de siempre.
+                                    Durante décadas, acceder a oportunidades reales implicaba riesgos legales ocultos. Archer elimina esa incertidumbre cubriendo el 100% de los costos de validación legal para nuestros miembros.
                                 </p>
                                 <p className="text-white border-l border-white/20 pl-6">
-                                    Archer nació para romper el ciclo. Usamos <strong className="text-gold font-normal">Inteligencia Militar (OSINT)</strong>, no intuición. Blindamos cada operación legalmente antes de siquiera publicarla.
+                                    Nuestra promesa es simple: <strong className="text-gold font-normal">Seguridad Jurídica Total y Gratuita</strong> en cada operación de la red.
                                 </p>
                                 <p>
-                                    Si buscas café y simpatía, ve a la competencia. Si buscas rentabilidad, velocidad y datos duros, bienvenido a Archer.
+                                    Si buscas especulación, este no es tu sitio. Si buscas activos verificados con protección legal incluida, bienvenido a Archer.
                                 </p>
                             </div>
                         </Reveal>
