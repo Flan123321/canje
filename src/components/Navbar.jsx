@@ -1,66 +1,65 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { Menu, X } from 'lucide-react';
 import { motion, useScroll, useMotionValueEvent } from 'framer-motion';
 
-const Navbar = () => {
+const Navbar = ({ onOpenModal }) => {
     const [scrolled, setScrolled] = useState(false);
     const [isOpen, setIsOpen] = useState(false);
     const { scrollY } = useScroll();
 
     useMotionValueEvent(scrollY, "change", (latest) => {
-        setScrolled(latest > 50);
+        setScrolled(latest > 20);
     });
 
     return (
         <nav
-            style={{
-                position: 'fixed',
-                top: 0,
-                left: 0,
-                right: 0,
-                zIndex: 100,
-                padding: scrolled ? '20px 0' : '40px 0',
-                transition: 'all 0.4s ease',
-                background: scrolled ? 'rgba(5, 5, 5, 0.9)' : 'transparent',
-                backdropFilter: scrolled ? 'blur(10px)' : 'none',
-                borderBottom: scrolled ? '1px solid rgba(255,255,255,0.05)' : 'none'
-            }}
+            className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${scrolled ? 'py-4 bg-rich-black/90 backdrop-blur-md border-b border-white/5' : 'py-8 bg-transparent'}`}
         >
-            <div className="container" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-                <a href="#" style={{ fontFamily: 'var(--font-serif)', fontSize: '1.5rem', fontWeight: 700, letterSpacing: '0.05em' }}>
+            <div className="container mx-auto px-6 flex justify-between items-center">
+                <a href="#" className="font-serif text-2xl font-bold tracking-tighter text-white">
                     ARCHER
+                    <span className="text-gold text-xs ml-2 tracking-widest font-sans font-normal opacity-70 hidden sm:inline-block">INTELLIGENCE</span>
                 </a>
 
                 {/* Desktop Menu */}
-                <div className="desktop-menu" style={{ display: 'flex', gap: '40px', alignItems: 'center' }}>
-                    {['Portafolio', 'Tesis', 'La Firma'].map((item) => (
+                <div className="hidden md:flex items-center gap-10">
+                    {['Manifiesto', 'Inteligencia', 'Validación'].map((item) => (
                         <a
                             key={item}
                             href={`#${item.toLowerCase()}`}
-                            style={{ fontSize: '0.9rem', opacity: 0.8, textTransform: 'uppercase', letterSpacing: '0.05em' }}
+                            className="text-xs uppercase tracking-widest text-white/70 hover:text-gold transition-colors"
                         >
                             {item}
                         </a>
                     ))}
-                    <button className="btn-secondary" style={{ padding: '10px 24px', fontSize: '0.8rem' }}>
-                        Acceso Clientes
+                    <button onClick={onOpenModal} className="px-6 py-3 border border-white/20 hover:border-gold hover:text-gold text-xs uppercase tracking-widest transition-all duration-300">
+                        Acceso Miembros
                     </button>
                 </div>
 
                 {/* Mobile Toggle */}
-                <div className="mobile-toggle" style={{ display: 'none' }}>
-                    <button onClick={() => setIsOpen(!isOpen)} style={{ background: 'none', border: 'none', color: 'white' }}>
+                <div className="md:hidden">
+                    <button onClick={() => setIsOpen(!isOpen)} className="text-white hover:text-gold">
                         {isOpen ? <X /> : <Menu />}
                     </button>
                 </div>
             </div>
 
-            <style>{`
-                @media(max-width: 768px) {
-                    .desktop-menu { display: none !important; }
-                    .mobile-toggle { display: block !important; }
-                }
-            `}</style>
+            {/* Mobile Menu Overlay */}
+            {isOpen && (
+                <motion.div
+                    initial={{ opacity: 0, y: -20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    className="absolute top-full left-0 w-full bg-black border-b border-white/10 p-6 md:hidden flex flex-col gap-6"
+                >
+                    {['Manifiesto', 'Inteligencia', 'Validación'].map((item) => (
+                        <a key={item} href="#" className="text-sm uppercase tracking-widest text-white/70 hover:text-gold">
+                            {item}
+                        </a>
+                    ))}
+                    <button onClick={onOpenModal} className="btn-gold w-full">Solicitar Acreditación</button>
+                </motion.div>
+            )}
         </nav>
     );
 };

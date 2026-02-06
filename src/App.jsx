@@ -1,24 +1,28 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
-import AuthorityBar from './components/AuthorityBar';
-import Opportunities from './components/Opportunities';
-import FounderVision from './components/FounderVision';
-import LeadMagnet from './components/LeadMagnet';
+import SocialProof from './components/SocialProof';
+import Manifesto from './components/Manifesto';
+import Pillars from './components/Pillars';
 import Footer from './components/Footer';
+import AcreditationModal from './components/AcreditationModal';
 
 function App() {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
   return (
-    <div className="App">
-      <Navbar />
+    <div className="bg-rich-black min-h-screen text-off-white selection:bg-gold selection:text-black">
+      <Navbar onOpenModal={() => setIsModalOpen(true)} />
+
       <main>
-        <Hero />
-        <AuthorityBar />
-        <Opportunities />
-        <FounderVision />
-        <LeadMagnet />
+        <Hero onOpenModal={() => setIsModalOpen(true)} />
+        <SocialProof />
+        <Manifesto />
+        <Pillars />
       </main>
+
       <Footer />
+      <AcreditationModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
     </div>
   );
 }
